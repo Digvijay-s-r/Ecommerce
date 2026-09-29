@@ -3,12 +3,10 @@ const mongoose = require("mongoose");
 const Role = require("./schema/role");
 const User = require("./schema/user");
 const UserPermission = require("./schema/userPermission");
+const config = require("./config");
 
 async function seedRoles() {
-  const mongoURI =
-    process.env.MONGODB_URI ||
-    "mongodb+srv://singhdig726_db_user:baWBMV6FymMEA2tP@cluster0.xqoncf3.mongodb.net/Ecommercedb?appName=Cluster0";
-
+  const mongoURI = config.MONGODB_URI;
   try {
     console.log("Connecting to MongoDB...");
     await mongoose.connect(mongoURI);

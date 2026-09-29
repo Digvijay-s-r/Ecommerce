@@ -1,9 +1,8 @@
+const config = require("./config");
 const mongoose = require("mongoose");
-
-
 async function connectDB() {
     try {
-        await mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://singhdig726_db_user:baWBMV6FymMEA2tP@cluster0.xqoncf3.mongodb.net/Ecommercedb?appName=Cluster0");
+        await mongoose.connect(config.MONGODB_URI);
         console.log("MongoDB connected successfully");
     } catch (error) {
         console.error("MongoDB connection error:", error);
